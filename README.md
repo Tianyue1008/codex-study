@@ -22,7 +22,7 @@ cd codex && git checkout 95273b84fbff40f9df7d71d50f1ca52c6489b25d
 | 06 | 执行策略 | Starlark `execpolicy` 如何把"允许/拒绝/需审批"变成可配置判定 | `execpolicy/` | ⬜ |
 | 07 | 审批与网络 | `ask`/`on-failure`/`never` 与出网代理如何共同构成权限边界 | `network-proxy/`、`core/src/safety.rs` | ⬜ |
 | 08 | 上下文压缩 | 长会话如何触发 compact、保留什么、丢什么 | `core/src/compact*.rs`、`core/src/context/` | ⬜ |
-| 09 | Prompt 组装 | system prompt / AGENTS.md / skills 如何拼成最终请求 | `core/gpt_5_codex_prompt.md`、`skills/`、`core/src/agents_md.rs` | ⬜ |
+| 09 | [Prompt 组装与 Skill 注入](docs/09-prompt-assembly.md) | system prompt / skills 如何拼成最终请求，预算与命中如何决定注入 | `core/src/session/mod.rs`、`core/src/session/turn.rs`、`ext/skills/`、`skills/`、`models-manager/` | ✅ |
 | 10 | Provider 与流式事件 | 一次 sampling request 的 SSE 事件如何变成内部事件 | `model-provider/`、`codex-api/` | ⬜ |
 | 11 | 会话持久化 | rollout / thread-store 如何保证中断后可恢复 | `rollout/`、`thread-store/`、`state/` | ⬜ |
 | 12 | App-Server 协议 | 外部应用如何驱动 Codex（JSON-RPC 双向协议） | `app-server/`、`protocol/` | ⬜ |
